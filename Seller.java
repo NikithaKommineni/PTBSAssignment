@@ -1,6 +1,7 @@
 public class Seller extends Person {
 
-	private void showMenu() {
+	
+	public void showMenu() {
 
 	}
 
