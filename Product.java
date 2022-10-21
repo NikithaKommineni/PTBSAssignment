@@ -1,5 +1,14 @@
+import java.io.*;
 public class Product {
-	public void addProduct(String producttype,String productname) throws IOException {
+	String producttype;
+	String item;
+	public Product(){}
+	public Product(String pt,String item){
+		this.producttype=pt;
+		this.item=item;
+	}
+	public void addProduct(String producttype,String productname)  {
+		try{
              File file = new File("A:/SER 515/assignptbs/ProductInfo.txt");
              if(!file.exists()) {
                  file.createNewFile();
@@ -9,6 +18,9 @@ public class Product {
              BufferedWriter output = new BufferedWriter(filewriter);
              output.write(producttype+":"+productname);
              output.close();
-             
+		} 
+		catch(IOException e){
+			e.printStackTrace();
+		}
          }
 }
